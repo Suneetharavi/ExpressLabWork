@@ -17,3 +17,5 @@ const magic = ["It is certain",
 "My sources say no",
 "Outlook not so good", 
 "Very doubtful"]
+
+module.exports = magic;

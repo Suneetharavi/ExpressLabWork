@@ -20,8 +20,8 @@ app.get('/',(req, res) =>{
   });
 
   app.get("/magic/:question", (req, res) => {
-    const chooseAnsRandom = Math.floor(Math.random() * 20);
-    console.log(chooseAnsRandom)
+    let chooseAnsRandom = Math.floor(Math.random() * (19-0)+0);
+    // console.log(magicResponse[chooseAnsRandom])
     res.send(`<h2>${req.params.question}</h2>  <h4>${magicResponse[chooseAnsRandom]}</h4>`);
   });
 
