@@ -12,9 +12,12 @@ app.get('/',(req, res) =>{
     
   });
 
-  app.get('/calculator', function(req, res) {
-    res.send('<h1>Hello Express CalculatorPage</h1>');
+  app.get('/tip/:total/:tipPercentage', function(req, res) {
+    const percentage = (req.params.total)*(req.params.tipPercentage / 100)
+    res.send(`<h1>The Tip to be paid is ${percentage} </h1>`);
   });
+
+
 
   app.listen(3000, function () {
     console.log('Listening on port 3000');
