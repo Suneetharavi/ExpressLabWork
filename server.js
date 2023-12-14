@@ -2,6 +2,8 @@ const express = require('express')
 
 const app= express();
 
+const magicResponse = require("./models/magic");
+
 app.get('/',(req, res) =>{
     res.send('<h1>Hello Express HomePage</h1>');
   });
@@ -17,6 +19,11 @@ app.get('/',(req, res) =>{
     res.send(`<h1>The Tip to be paid is ${percentage} </h1>`);
   });
 
+  app.get("/magic/:question", (req, res) => {
+    const chooseAnsRandom = Math.floor(Math.random() * 20);
+    console.log(chooseAnsRandom)
+    res.send(`<h2>${req.params.question}</h2>  <h4>${magicResponse[chooseAnsRandom]}</h4>`);
+  });
 
 
   app.listen(3000, function () {
